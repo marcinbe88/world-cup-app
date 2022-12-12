@@ -94,5 +94,4 @@ function confirmTeams() {
 
 function updateScores() {
     console.log('scores updated')
-    
 }
