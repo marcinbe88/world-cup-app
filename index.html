@@ -19,56 +19,17 @@
     <section id="rounds">
       <div id="round-1">
         <h3>Round 1</h3>
-        <div id="round-1-div">
-        <!-- <div>
-          <p class="team-1-name"></p>
-          <input placeholder="goals" type="text" class="team-1-goals" />
-          <input placeholder="goals" type="text" class="team-2-goals" />
-          <p class="team-2-name"></p>
-        </div>
-        <div>
-          <p class="team-3-name"></p>
-          <input placeholder="goals" type="text" class="team-3-goals" />
-          <input placeholder="goals" type="text" class="team-4-goals" />
-          <p class="team-4-name"></p>
-        </div> -->
-        </div>
+        <div id="round-1-div"></div>
       </div>
       <div id="round-2">
         <h3>Round 2</h3>
-        <div id="round-2-div">
-        <!-- <div>
-          <p class="team-1-name"></p>
-          <input placeholder="goals" type="text" class="team-1-goals" />
-          <input placeholder="goals" type="text" class="team-3-goals" />
-          <p class="team-3-name"></p>
-        </div>
-        <div>
-          <p class="team-2-name"></p>
-          <input placeholder="goals" type="text" class="team-3-goals" />
-          <input placeholder="goals" type="text" class="team-4-goals" />
-          <p class="team-4-name"></p>
-        </div> -->
-        </div>
+        <div id="round-2-div"></div>
       </div>
       <div id="round-3">
-      <div>
         <h3>Round 3</h3>
-        <div id="round-3-div">
-        <!-- <div>
-          <p class="team-1-name"></p>
-          <input placeholder="goals" type="text" class="team-1-goals" />
-          <input placeholder="goals" type="text" class="team-4-goals" />
-          <p class="team-4-name"></p>
-        </div>
-        <div>
-          <p class="team-3-name"></p>
-          <input placeholder="goals" type="text" class="team-3-goals" />
-          <input placeholder="goals" type="text" class="team-2-goals" />
-          <p class="team-2-name"></p>
-        </div> -->
+        <div id="round-3-div"></div>
       </div>
-      </div>
+      <button type="submit" id="scores-submit-btn">Update scores</button>
     </section>
 
     <section id="right-section">
@@ -76,11 +37,32 @@
         <h2>Group C:</h2>
       </div>
       <div id="score-table">
-        <h2>Table of teams (scores)</h2>
-        <p>Team</p>
-        <p>Team</p>
-        <p>Team</p>
-        <p>Team</p>
+        <h2>Teams' table</h2>
+        <table>
+          <div id="table-header">
+            <tr>
+              <th colspan="2"><h2>Group C</h2></th>
+            </tr>
+          </div>
+          <div id="table-body">
+            <tr>
+              <td id="first-team">Team 1</td>
+              <td id="first-team-score">score 1</td>
+            </tr>
+            <tr>
+              <td id="second-team">Team 2</td>
+              <td id="second-team-score">score 2</td>
+            </tr>
+            <tr>
+              <td id="third-team">Team 3</td>
+              <td id="third-team-score">score 3</td>
+            </tr>
+            <tr>
+              <td id="fourth-team">Team 4</td>
+              <td id="fourth-team-score">score 4</td>
+            </tr>
+          </div>
+        </table>
       </div>
     </section>
 
