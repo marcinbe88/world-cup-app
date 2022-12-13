@@ -48,14 +48,14 @@ function confirmTeams() {
   round1Div.innerHTML = `
     <div>
     <p>${team1Input.value}</p>
-    <input placeholder="goals" type="text" class="team-1-goals" />
-    <input placeholder="goals" type="text" class="team-2-goals" />
+    <input placeholder="goals" type="text" id="team-1r1-goals" />
+    <input placeholder="goals" type="text" id="team-2r1-goals" />
     <p>${team2Input.value}</p>
     </div>
     <div>
     <p>${team3Input.value}</p>
-    <input placeholder="goals" type="text" class="team-3-goals" />
-    <input placeholder="goals" type="text" class="team-4-goals" />
+    <input placeholder="goals" type="text" id="team-3r1-goals" />
+    <input placeholder="goals" type="text" id="team-4r1-goals" />
     <p>${team4Input.value}</p>
     </div>
     `;
@@ -63,14 +63,14 @@ function confirmTeams() {
   round2Div.innerHTML = `
     <div>
     <p>${team1Input.value}</p>
-    <input placeholder="goals" type="text" class="team-1-goals" />
-    <input placeholder="goals" type="text" class="team-2-goals" />
+    <input placeholder="goals" type="text" id="team-1r2-goals" />
+    <input placeholder="goals" type="text" id="team-3r2-goals" />
     <p>${team3Input.value}</p>
     </div>
     <div>
     <p>${team2Input.value}</p>
-    <input placeholder="goals" type="text" class="team-3-goals" />
-    <input placeholder="goals" type="text" class="team-4-goals" />
+    <input placeholder="goals" type="text" id="team-2r2-goals" />
+    <input placeholder="goals" type="text" id="team-4r2-goals" />
     <p>${team4Input.value}</p>
     </div>
     `;
@@ -78,14 +78,14 @@ function confirmTeams() {
   round3Div.innerHTML = `
     <div>
     <p>${team1Input.value}</p>
-    <input placeholder="goals" type="text" class="team-1-goals" />
-    <input placeholder="goals" type="text" class="team-2-goals" />
+    <input placeholder="goals" type="text" id="team-1r3-goals" />
+    <input placeholder="goals" type="text" id="team-4r3-goals" />
     <p>${team4Input.value}</p>
     </div>
     <div>
     <p>${team3Input.value}</p>
-    <input placeholder="goals" type="text" class="team-3-goals" />
-    <input placeholder="goals" type="text" class="team-4-goals" />
+    <input placeholder="goals" type="text" class="team-3r3-goals" />
+    <input placeholder="goals" type="text" class="team-2r3-goals" />
     <p>${team2Input.value}</p>
     </div>
     `;
@@ -93,22 +93,55 @@ function confirmTeams() {
   groupTeamsList.append(team1Name, team2Name, team3Name, team4Name);
   round1.append(round1Div);
   round2.append(round2Div);
-  round3.append(round3Div);
-
-  const team1Score = document.getElementById("team-1-goals");
-  const team2Score = document.getElementById("team-2-goals");
-  const team3Score = document.getElementById("team-3-goals");
-  const team4Score = document.getElementById("team-4-goals");   
+  round3.append(round3Div); 
 }
 
 function updateScores() {
-  console.log("scores updated");
+  const team1Score = document.getElementById("team-1r1-goals");
+  const team2Score = document.getElementById("team-2r1-goals");
+  const team3Score = document.getElementById("team-3r1-goals");
+  const team4Score = document.getElementById("team-4r1-goals");
+
+  const team1TablePoints = document.getElementById("first-team-points");
+  const team2TablePoints = document.getElementById("second-team-points");
+  const team3TablePoints = document.getElementById("third-team-points");
+  const team4TablePoints = document.getElementById("fourth-team-points");
+
+  const team1TableGoalsScored = document.getElementById("first-team-goals-scored");
+  const team2TableGoalsScored = document.getElementById("second-team-goals-scored");
+  const team3TableGoalsScored = document.getElementById("third-team-goals-scored");
+  const team4TableGoalsScored = document.getElementById("fourth-team-goals-scored");
+
   let team1Points = 0;
   let team2Points = 0;
   let team3Points = 0;
   let team4Points = 0;
 
-  console.log(team1Input.value)
-  console.log(team1Points);
-  console.log(team2Points);
+  if (team1Score.value > team2Score.value) {
+    team1Points += 3
+  } else if (team1Score.value < team2Score.value) {
+    team2Points += 3
+  } else {
+    team1Points += 1
+    team2Points += 1
+  }
+
+  if (team3Score.value > team4Score.value) {
+    team3Points += 3
+  } else if (team3Score.value < team4Score.value) {
+    team4Points += 3
+  } else {
+    team3Points += 1
+    team4Points += 1
+  }
+
+  team1TableGoalsScored.innerText = team1Score.value
+  team2TableGoalsScored.innerText = team2Score.value
+  team3TableGoalsScored.innerText = team3Score.value
+  team4TableGoalsScored.innerText = team4Score.value
+
+  team1TablePoints.innerText = team1Points
+  team2TablePoints.innerText = team2Points
+  team3TablePoints.innerText = team3Points
+  team4TablePoints.innerText = team4Points
 }
