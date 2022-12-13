@@ -111,6 +111,11 @@ function updateScores() {
   const team2TableGoalsScored = document.getElementById("second-team-goals-scored");
   const team3TableGoalsScored = document.getElementById("third-team-goals-scored");
   const team4TableGoalsScored = document.getElementById("fourth-team-goals-scored");
+  
+  const team1TableGoalsLost = document.getElementById("first-team-goals-lost");
+  const team2TableGoalsLost = document.getElementById("second-team-goals-lost");
+  const team3TableGoalsLost = document.getElementById("third-team-goals-lost");
+  const team4TableGoalsLost = document.getElementById("fourth-team-goals-lost");
 
   let team1Points = 0;
   let team2Points = 0;
@@ -135,13 +140,20 @@ function updateScores() {
     team4Points += 1
   }
 
+  team1TablePoints.innerText = team1Points
+  team2TablePoints.innerText = team2Points
+  team3TablePoints.innerText = team3Points
+  team4TablePoints.innerText = team4Points
+
   team1TableGoalsScored.innerText = team1Score.value
   team2TableGoalsScored.innerText = team2Score.value
   team3TableGoalsScored.innerText = team3Score.value
   team4TableGoalsScored.innerText = team4Score.value
 
-  team1TablePoints.innerText = team1Points
-  team2TablePoints.innerText = team2Points
-  team3TablePoints.innerText = team3Points
-  team4TablePoints.innerText = team4Points
+  team1TableGoalsLost.innerText = team2Score.value
+  team2TableGoalsLost.innerText = team1Score.value
+  team3TableGoalsLost.innerText = team4Score.value
+  team4TableGoalsLost.innerText = team3Score.value
+
+
 }
