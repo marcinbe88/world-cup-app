@@ -118,10 +118,14 @@ input {
   flex-direction: column;
   align-items: center;
   width: 400px;
-  height: 350px;
+  height: 240px;
   border: 2px red solid;
   border-radius: 20px;
   background-color: white;
+}
+
+#group-teams p {
+  margin: 8px;
 }
 
 #score-table {
@@ -130,9 +134,14 @@ input {
   flex-direction: column;
   align-items: center;
   width: 400px;
+  height: 515px;
   border: 2px red solid;
   border-radius: 20px;
   background-color: white;
+}
+
+#score-table h2 {
+  margin-bottom: 5px;
 }
 
 table,
@@ -140,6 +149,7 @@ td {
     border: 1px solid #333;
     padding: 5px;
     width: 360px;
+    height: 50px;
 }
 
 table {
@@ -147,6 +157,24 @@ table {
   padding: 10px;
 }
 
-#first-team {
+#team-column {
   width: 50%;
+}
+
+#team-column,
+#team-points-column,
+#team-goals-scored-column,
+#team-goals-lost-column {
+  font-size: 20px;
+  color: red;
+  font-weight: bolder;
+}
+
+#first-team-name,
+#second-team-name,
+#third-team-name,
+#fourth-team-name {
+  color: blue;
+  font-size: 18px;
+  font-weight: bold;
 }

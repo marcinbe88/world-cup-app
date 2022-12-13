@@ -6,6 +6,11 @@ const team2Input = document.getElementById("team-2-input");
 const team3Input = document.getElementById("team-3-input");
 const team4Input = document.getElementById("team-4-input");
 
+const team1InTable = document.getElementById("first-team-name");
+const team2InTable = document.getElementById("second-team-name");
+const team3InTable = document.getElementById("third-team-name");
+const team4InTable = document.getElementById("fourth-team-name");
+
 const roundsTeam1Name = document.getElementsByClassName("team-1-name");
 const roundsTeam2Name = document.getElementsByClassName("team-2-name");
 const roundsTeam3Name = document.getElementsByClassName("team-3-name");
@@ -27,10 +32,10 @@ function confirmTeams() {
   team3Name.innerText = `${team3Input.value}`;
   team4Name.innerText = `${team4Input.value}`;
 
-  // roundsTeam1Name.innerText = team1Name
-  // roundsTeam2Name.innerText = team2Name
-  // roundsTeam3Name.innerText = team3Name
-  // roundsTeam4Name.innerText = team4Name
+  team1InTable.innerText = `${team1Input.value}`;
+  team2InTable.innerText = `${team2Input.value}`;
+  team3InTable.innerText = `${team3Input.value}`;
+  team4InTable.innerText = `${team4Input.value}`;
 
   const round1Div = document.getElementById("round-1-div");
   const round2Div = document.getElementById("round-2-div");
@@ -89,9 +94,21 @@ function confirmTeams() {
   round1.append(round1Div);
   round2.append(round2Div);
   round3.append(round3Div);
+
+  const team1Score = document.getElementById("team-1-goals");
+  const team2Score = document.getElementById("team-2-goals");
+  const team3Score = document.getElementById("team-3-goals");
+  const team4Score = document.getElementById("team-4-goals");   
 }
 
-
 function updateScores() {
-    console.log('scores updated')
+  console.log("scores updated");
+  let team1Points = 0;
+  let team2Points = 0;
+  let team3Points = 0;
+  let team4Points = 0;
+
+  console.log(team1Input.value)
+  console.log(team1Points);
+  console.log(team2Points);
 }
