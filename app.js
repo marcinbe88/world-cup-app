@@ -97,10 +97,15 @@ function confirmTeams() {
 }
 
 function updateScores() {
-  const team1Score = document.getElementById("team-1r1-goals");
-  const team2Score = document.getElementById("team-2r1-goals");
-  const team3Score = document.getElementById("team-3r1-goals");
-  const team4Score = document.getElementById("team-4r1-goals");
+  const team1ScoreR1 = document.getElementById("team-1r1-goals");
+  const team2ScoreR1 = document.getElementById("team-2r1-goals");
+  const team3ScoreR1 = document.getElementById("team-3r1-goals");
+  const team4ScoreR1 = document.getElementById("team-4r1-goals");
+
+  const team1ScoreR2 = document.getElementById("team-1r2-goals");
+  const team2ScoreR2 = document.getElementById("team-2r2-goals");
+  const team3ScoreR2 = document.getElementById("team-3r2-goals");
+  const team4ScoreR2 = document.getElementById("team-4r2-goals");
 
   const team1TablePoints = document.getElementById("first-team-points");
   const team2TablePoints = document.getElementById("second-team-points");
@@ -122,21 +127,37 @@ function updateScores() {
   let team3Points = 0;
   let team4Points = 0;
 
-  if (team1Score.value > team2Score.value) {
+  if (team1ScoreR1.value > team2ScoreR1.value) {
     team1Points += 3
-  } else if (team1Score.value < team2Score.value) {
+  } else if (team1ScoreR1.value < team2ScoreR1.value) {
     team2Points += 3
   } else {
     team1Points += 1
     team2Points += 1
   }
-
-  if (team3Score.value > team4Score.value) {
+  if (team3ScoreR1.value > team4ScoreR1.value) {
     team3Points += 3
-  } else if (team3Score.value < team4Score.value) {
+  } else if (team3ScoreR1.value < team4ScoreR1.value) {
     team4Points += 3
   } else {
     team3Points += 1
+    team4Points += 1
+  }
+
+  if (team1ScoreR2.value > team3ScoreR2.value) {
+    team1Points += 3
+  } else if (team1ScoreR2.value < team3ScoreR2.value) {
+    team3Points += 3
+  } else {
+    team1Points += 1
+    team3Points += 1
+  }
+  if (team2ScoreR2.value > team4ScoreR2.value) {
+    team2Points += 3
+  } else if (team2ScoreR2.value < team4ScoreR2.value) {
+    team4Points += 3
+  } else {
+    team2Points += 1
     team4Points += 1
   }
 
@@ -145,15 +166,14 @@ function updateScores() {
   team3TablePoints.innerText = team3Points
   team4TablePoints.innerText = team4Points
 
-  team1TableGoalsScored.innerText = team1Score.value
-  team2TableGoalsScored.innerText = team2Score.value
-  team3TableGoalsScored.innerText = team3Score.value
-  team4TableGoalsScored.innerText = team4Score.value
+  team1TableGoalsScored.innerText = +team1ScoreR1.value + +team1ScoreR2.value
+  team2TableGoalsScored.innerText = +team2ScoreR1.value + +team2ScoreR2.value
+  team3TableGoalsScored.innerText = +team3ScoreR1.value + +team3ScoreR2.value
+  team4TableGoalsScored.innerText = +team4ScoreR1.value + +team4ScoreR2.value
 
-  team1TableGoalsLost.innerText = team2Score.value
-  team2TableGoalsLost.innerText = team1Score.value
-  team3TableGoalsLost.innerText = team4Score.value
-  team4TableGoalsLost.innerText = team3Score.value
-
+  team1TableGoalsLost.innerText = +team2ScoreR1.value + +team3ScoreR2.value
+  team2TableGoalsLost.innerText = +team1ScoreR1.value + +team4ScoreR2.value
+  team3TableGoalsLost.innerText = +team4ScoreR1.value + +team1ScoreR2.value
+  team4TableGoalsLost.innerText = +team3ScoreR1.value + +team2ScoreR2.value
 
 }
