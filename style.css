@@ -37,6 +37,9 @@ header {
 }
 #rounds {
   height: 950px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center
 }
 
 #round-1,
@@ -47,24 +50,30 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 550px;
+  width: 700px;
   height: 240px;
   border: 2px red solid;
   border-radius: 20px;
   background-color: white;
 }
 
+#round-1-div,
+#round-2-div,
+#round-3-div {
+  display: flex;
+  flex-direction: column;
+  
+}
+
 div {
   padding-top: 5px;
   padding-bottom: 15px;
 }
+
 h1 {
   color: red;
   text-align: center;
   margin-top: 30px;
-}
-
-h1 {
   font-size: 40px;
 }
 
@@ -94,6 +103,7 @@ p {
   color: rgb(14, 160, 14);
   font-weight: bold;
   margin-bottom: 15px;
+  width: 200px;
 }
 
 input {
