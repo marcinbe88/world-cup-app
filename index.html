@@ -6,14 +6,17 @@
     <title>Football World Cup app</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <header>
       <h1>Football World Cup group table and standings</h1>
+      <h3>Which group:</h3>
+        <input placeholder="Group name (A-F)" type="text" id="group-name-input" />
       <h3>Write teams:</h3>
-      <input placeholder="Team name" type="text" id="team-1-input" />
-      <input placeholder="Team name" type="text" id="team-2-input" />
-      <input placeholder="Team name" type="text" id="team-3-input" />
-      <input placeholder="Team name" type="text" id="team-4-input" />
+        <input placeholder="Team name" type="text" id="team-1-input" />
+        <input placeholder="Team name" type="text" id="team-2-input" />
+        <input placeholder="Team name" type="text" id="team-3-input" />
+        <input placeholder="Team name" type="text" id="team-4-input" />
       <button type="submit" id="submit-btn">Confirm teams</button>
     </header>
     <section id="rounds">
@@ -34,14 +37,14 @@
 
     <section id="right-section">
       <div id="group-teams">
-        <h2>Group C:</h2>
+        <h2 id="group-name-team-list">Group</h2>
       </div>
       <div id="score-table">
         <h2>Teams' table</h2>
         <table>
           <div id="table-header">
             <tr>
-              <th colspan="2"><h2>Group C</h2></th>
+              <th colspan="2"><h2 id="group-name-table">Group</h2></th>
             </tr>
           </div>
           <div id="table-body">
@@ -85,4 +88,5 @@
 
     <script src="app.js"></script>
   </body>
+
 </html>

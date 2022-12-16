@@ -1,6 +1,7 @@
 const submitButton = document.getElementById("submit-btn");
 const resultSubmitButton = document.getElementById("scores-submit-btn");
 
+const groupNameInput = document.getElementById("group-name-input"); 
 const team1Input = document.getElementById("team-1-input");
 const team2Input = document.getElementById("team-2-input");
 const team3Input = document.getElementById("team-3-input");
@@ -10,6 +11,9 @@ const team1InTable = document.getElementById("first-team-name");
 const team2InTable = document.getElementById("second-team-name");
 const team3InTable = document.getElementById("third-team-name");
 const team4InTable = document.getElementById("fourth-team-name");
+
+const groupNameTeamList = document.getElementById("group-name-team-list");
+const groupNameTable = document.getElementById("group-name-table");
 
 const roundsTeam1Name = document.getElementsByClassName("team-1-name");
 const roundsTeam2Name = document.getElementsByClassName("team-2-name");
@@ -26,6 +30,9 @@ function confirmTeams() {
   const team2Name = document.createElement("p");
   const team3Name = document.createElement("p");
   const team4Name = document.createElement("p");
+
+  groupNameTeamList.innerText = `Group ${groupNameInput.value}`;
+  groupNameTable.innerText = `Group ${groupNameInput.value}`;
 
   team1Name.innerText = `${team1Input.value}`;
   team2Name.innerText = `${team2Input.value}`;
@@ -93,7 +100,7 @@ function confirmTeams() {
   groupTeamsList.append(team1Name, team2Name, team3Name, team4Name);
   round1.append(round1Div);
   round2.append(round2Div);
-  round3.append(round3Div); 
+  round3.append(round3Div);
 }
 
 function updateScores() {
@@ -121,7 +128,7 @@ function updateScores() {
   const team2TableGoalsScored = document.getElementById("second-team-goals-scored");
   const team3TableGoalsScored = document.getElementById("third-team-goals-scored");
   const team4TableGoalsScored = document.getElementById("fourth-team-goals-scored");
-  
+
   const team1TableGoalsLost = document.getElementById("first-team-goals-lost");
   const team2TableGoalsLost = document.getElementById("second-team-goals-lost");
   const team3TableGoalsLost = document.getElementById("third-team-goals-lost");
@@ -133,77 +140,68 @@ function updateScores() {
   let team4Points = 0;
 
   if (team1ScoreR1.value > team2ScoreR1.value) {
-    team1Points += 3
+    team1Points += 3;
   } else if (team1ScoreR1.value < team2ScoreR1.value) {
-    team2Points += 3
+    team2Points += 3;
   } else {
-    team1Points += 1
-    team2Points += 1
+    team1Points += 1;
+    team2Points += 1;
   }
   if (team3ScoreR1.value > team4ScoreR1.value) {
-    team3Points += 3
+    team3Points += 3;
   } else if (team3ScoreR1.value < team4ScoreR1.value) {
-    team4Points += 3
+    team4Points += 3;
   } else {
-    team3Points += 1
-    team4Points += 1
+    team3Points += 1;
+    team4Points += 1;
   }
 
   if (team1ScoreR2.value > team3ScoreR2.value) {
-    team1Points += 3
+    team1Points += 3;
   } else if (team1ScoreR2.value < team3ScoreR2.value) {
-    team3Points += 3
+    team3Points += 3;
   } else {
-    team1Points += 1
-    team3Points += 1
+    team1Points += 1;
+    team3Points += 1;
   }
   if (team2ScoreR2.value > team4ScoreR2.value) {
-    team2Points += 3
+    team2Points += 3;
   } else if (team2ScoreR2.value < team4ScoreR2.value) {
-    team4Points += 3
+    team4Points += 3;
   } else {
-    team2Points += 1
-    team4Points += 1
+    team2Points += 1;
+    team4Points += 1;
   }
 
   if (team1ScoreR3.value > team4ScoreR3.value) {
-    team1Points += 3
+    team1Points += 3;
   } else if (team1ScoreR3.value < team4ScoreR3.value) {
-    team4Points += 3
+    team4Points += 3;
   } else {
-    team1Points += 1
-    team4Points += 1
+    team1Points += 1;
+    team4Points += 1;
   }
   if (team2ScoreR3.value > team3ScoreR3.value) {
-    team2Points += 3
+    team2Points += 3;
   } else if (team2ScoreR3.value < team3ScoreR3.value) {
-    team3Points += 3
+    team3Points += 3;
   } else {
-    team2Points += 1
-    team3Points += 1
+    team2Points += 1;
+    team3Points += 1;
   }
 
-  team1TablePoints.innerText = team1Points
-  team2TablePoints.innerText = team2Points
-  team3TablePoints.innerText = team3Points
-  team4TablePoints.innerText = team4Points
+  team1TablePoints.innerText = team1Points;
+  team2TablePoints.innerText = team2Points;
+  team3TablePoints.innerText = team3Points;
+  team4TablePoints.innerText = team4Points;
 
-  team1TableGoalsScored.innerText = +team1ScoreR1.value + +team1ScoreR2.value
-   + +team1ScoreR3.value
-  team2TableGoalsScored.innerText = +team2ScoreR1.value + +team2ScoreR2.value
-   + +team2ScoreR3.value
-  team3TableGoalsScored.innerText = +team3ScoreR1.value + +team3ScoreR2.value
-   + +team3ScoreR3.value
-  team4TableGoalsScored.innerText = +team4ScoreR1.value + +team4ScoreR2.value
-   + +team4ScoreR3.value
+  team1TableGoalsScored.innerText = +team1ScoreR1.value + +team1ScoreR2.value + +team1ScoreR3.value;
+  team2TableGoalsScored.innerText = +team2ScoreR1.value + +team2ScoreR2.value + +team2ScoreR3.value;
+  team3TableGoalsScored.innerText = +team3ScoreR1.value + +team3ScoreR2.value + +team3ScoreR3.value;
+  team4TableGoalsScored.innerText = +team4ScoreR1.value + +team4ScoreR2.value + +team4ScoreR3.value;
 
-  team1TableGoalsLost.innerText = +team2ScoreR1.value + +team3ScoreR2.value
-   + +team4ScoreR3.value
-  team2TableGoalsLost.innerText = +team1ScoreR1.value + +team4ScoreR2.value
-   + +team3ScoreR3.value
-  team3TableGoalsLost.innerText = +team4ScoreR1.value + +team1ScoreR2.value
-   + +team2ScoreR3.value
-  team4TableGoalsLost.innerText = +team3ScoreR1.value + +team2ScoreR2.value
-   + +team1ScoreR3.value
-
+  team1TableGoalsLost.innerText = +team2ScoreR1.value + +team3ScoreR2.value + +team4ScoreR3.value;
+  team2TableGoalsLost.innerText = +team1ScoreR1.value + +team4ScoreR2.value + +team3ScoreR3.value;
+  team3TableGoalsLost.innerText = +team4ScoreR1.value + +team1ScoreR2.value + +team2ScoreR3.value;
+  team4TableGoalsLost.innerText = +team3ScoreR1.value + +team2ScoreR2.value + +team1ScoreR3.value;
 }
