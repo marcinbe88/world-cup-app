@@ -84,8 +84,8 @@ function confirmTeams() {
     </div>
     <div>
     <p>${team3Input.value}</p>
-    <input placeholder="goals" type="text" class="team-3r3-goals" />
-    <input placeholder="goals" type="text" class="team-2r3-goals" />
+    <input placeholder="goals" type="text" id="team-3r3-goals" />
+    <input placeholder="goals" type="text" id="team-2r3-goals" />
     <p>${team2Input.value}</p>
     </div>
     `;
@@ -109,7 +109,7 @@ function updateScores() {
 
   const team1ScoreR3 = document.getElementById("team-1r3-goals");
   const team2ScoreR3 = document.getElementById("team-2r3-goals");
-  const team3ScoreR3 = document.getElementById("team-2r3-goals");
+  const team3ScoreR3 = document.getElementById("team-3r3-goals");
   const team4ScoreR3 = document.getElementById("team-4r3-goals");
 
   const team1TablePoints = document.getElementById("first-team-points");
@@ -188,14 +188,22 @@ function updateScores() {
   team3TablePoints.innerText = team3Points
   team4TablePoints.innerText = team4Points
 
-  team1TableGoalsScored.innerText = +team1ScoreR1.value + +team1ScoreR2.value + +team1ScoreR3.value
-  team2TableGoalsScored.innerText = +team2ScoreR1.value + +team2ScoreR2.value + +team2ScoreR3.value
-  team3TableGoalsScored.innerText = +team3ScoreR1.value + +team3ScoreR2.value + +team3ScoreR3.value
-  team4TableGoalsScored.innerText = +team4ScoreR1.value + +team4ScoreR2.value + +team4ScoreR3.value
+  team1TableGoalsScored.innerText = +team1ScoreR1.value + +team1ScoreR2.value
+   + +team1ScoreR3.value
+  team2TableGoalsScored.innerText = +team2ScoreR1.value + +team2ScoreR2.value
+   + +team2ScoreR3.value
+  team3TableGoalsScored.innerText = +team3ScoreR1.value + +team3ScoreR2.value
+   + +team3ScoreR3.value
+  team4TableGoalsScored.innerText = +team4ScoreR1.value + +team4ScoreR2.value
+   + +team4ScoreR3.value
 
-  team1TableGoalsLost.innerText = +team2ScoreR1.value + +team3ScoreR2.value + +team4ScoreR3.value
-  team2TableGoalsLost.innerText = +team1ScoreR1.value + +team4ScoreR2.value + +team3ScoreR3.value
-  team3TableGoalsLost.innerText = +team4ScoreR1.value + +team1ScoreR2.value + +team2ScoreR3.value
-  team4TableGoalsLost.innerText = +team3ScoreR1.value + +team2ScoreR2.value + +team1ScoreR3.value
+  team1TableGoalsLost.innerText = +team2ScoreR1.value + +team3ScoreR2.value
+   + +team4ScoreR3.value
+  team2TableGoalsLost.innerText = +team1ScoreR1.value + +team4ScoreR2.value
+   + +team3ScoreR3.value
+  team3TableGoalsLost.innerText = +team4ScoreR1.value + +team1ScoreR2.value
+   + +team2ScoreR3.value
+  team4TableGoalsLost.innerText = +team3ScoreR1.value + +team2ScoreR2.value
+   + +team1ScoreR3.value
 
 }
