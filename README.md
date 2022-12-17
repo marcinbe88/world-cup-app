@@ -7,6 +7,7 @@ Football world cup app for calculating scores.
 4. The teams' table and standings will be automatically updated according to the given scores.
 
 Rules for giving scores:
+
 Win: 3 points
 Draw: 1 point
 Loss: 0 point
