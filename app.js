@@ -196,23 +196,15 @@ function updateScores() {
     team3Points += 1;
   }
 
-  // team1TableGoalsScored.innerText =
-  //   +team1ScoreR1.value + +team1ScoreR2.value + +team1ScoreR3.value;
-  // team2TableGoalsScored.innerText =
-  //   +team2ScoreR1.value + +team2ScoreR2.value + +team2ScoreR3.value;
-  // team3TableGoalsScored.innerText =
-  //   +team3ScoreR1.value + +team3ScoreR2.value + +team3ScoreR3.value;
-  // team4TableGoalsScored.innerText =
-  //   +team4ScoreR1.value + +team4ScoreR2.value + +team4ScoreR3.value;
+  const team1GoalsPlus = +team1ScoreR1.value + +team1ScoreR2.value + +team1ScoreR3.value
+  const team2GoalsPlus = +team2ScoreR1.value + +team2ScoreR2.value + +team2ScoreR3.value
+  const team3GoalsPlus = +team3ScoreR1.value + +team3ScoreR2.value + +team3ScoreR3.value
+  const team4GoalsPlus = +team4ScoreR1.value + +team4ScoreR2.value + +team4ScoreR3.value;
 
-  // team1TableGoalsLost.innerText =
-  //   +team2ScoreR1.value + +team3ScoreR2.value + +team4ScoreR3.value;
-  // team2TableGoalsLost.innerText =
-  //   +team1ScoreR1.value + +team4ScoreR2.value + +team3ScoreR3.value;
-  // team3TableGoalsLost.innerText =
-  //   +team4ScoreR1.value + +team1ScoreR2.value + +team2ScoreR3.value;
-  // team4TableGoalsLost.innerText =
-  //   +team3ScoreR1.value + +team2ScoreR2.value + +team1ScoreR3.value;
+  const team1GoalsMinus = +team2ScoreR1.value + +team3ScoreR2.value + +team4ScoreR3.value
+  const team2GoalsMinus = +team1ScoreR1.value + +team4ScoreR2.value + +team3ScoreR3.value
+  const team3GoalsMinus = +team4ScoreR1.value + +team1ScoreR2.value + +team2ScoreR3.value
+  const team4GoalsMinus = +team3ScoreR1.value + +team2ScoreR2.value + +team1ScoreR3.value
 
   let teamsPointsObject = {};
 
@@ -241,7 +233,15 @@ function updateScores() {
   team4TablePoints.innerText = `${result[0][1]}`;
 
 
-  console.log(teamsPointsObject);
-  console.log(teamsSortedByScores);
-  console.log(result);
+  // ta czesc jest do poprawy, trzeba posortowac bramki zgodnie z posortowanymi
+  // druzynami (pod katem zdobytych punktow)
+  team1TableGoalsScored.innerText = team1GoalsPlus
+  team2TableGoalsScored.innerText = team2GoalsPlus
+  team3TableGoalsScored.innerText = team3GoalsPlus
+  team4TableGoalsScored.innerText = team4GoalsPlus
+
+  team1TableGoalsLost.innerText = team1GoalsMinus
+  team2TableGoalsLost.innerText = team2GoalsMinus
+  team3TableGoalsLost.innerText = team3GoalsMinus
+  team4TableGoalsLost.innerText = team4GoalsMinus
 }
