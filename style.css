@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(242, 242, 242);
+  background-color: rgb(130, 195, 252);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande";
   display: flex;
   flex-direction: row;
@@ -26,7 +26,7 @@ header {
 
 #submit-btn {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande";
-  font-size: 16px;
+  font-size: 18px;
   padding: 10px;
   margin: auto;
   margin-top: 10px;
@@ -55,7 +55,7 @@ header {
   height: 240px;
   border: 2px red solid;
   border-radius: 20px;
-  background-color: white;
+  background-color: rgb(254, 211, 158);
 }
 
 #round-1-div,
@@ -71,7 +71,7 @@ div {
 }
 
 h1 {
-  color: red;
+  color: rgb(1, 1, 189);
   text-align: center;
   margin-top: 30px;
   font-size: 40px;
@@ -100,7 +100,7 @@ p {
   display: inline-block;
   padding: 0 15px;
   font-size: 20px;
-  color: rgb(14, 160, 14);
+  color: rgb(112, 0, 160);
   font-weight: bold;
   margin-bottom: 15px;
   width: 200px;
@@ -115,13 +115,14 @@ input {
   height: 30px;
   width: 100px;
   font-size: 20px;
+  border-radius: 7px;
 }
 
 #scores-submit-btn {
   margin: 10px auto;
   display: flex;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande";
-  font-size: 16px;
+  font-size: 18px;
   padding: 10px;
   border-radius: 10px;;
   background-color: rgb(255, 226, 109);
@@ -136,7 +137,7 @@ input {
   height: 240px;
   border: 2px red solid;
   border-radius: 20px;
-  background-color: white;
+  background-color: hsl(178, 100%, 93%);
 }
 
 #group-teams p {
@@ -153,7 +154,7 @@ input {
   height: 535px;
   border: 2px red solid;
   border-radius: 20px;
-  background-color: white;
+  background-color: hsl(178, 100%, 93%);
 }
 
 #score-table h2 {
