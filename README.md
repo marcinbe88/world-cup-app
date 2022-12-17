@@ -9,5 +9,7 @@ Football world cup app for calculating scores.
 Rules for giving scores:
 
 Win: 3 points
+
 Draw: 1 point
+
 Loss: 0 point
