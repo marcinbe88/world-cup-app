@@ -25,19 +25,17 @@ resultSubmitButton.addEventListener("click", updateScores);
 
 function confirmTeams() {
   const groupTeamsList = document.getElementById("group-teams");
-
-  const team1Name = document.createElement("p");
-  const team2Name = document.createElement("p");
-  const team3Name = document.createElement("p");
-  const team4Name = document.createElement("p");
-
+  const teamsList = document.getElementById("teams-list")
+  
   groupNameTeamList.innerText = `Group ${groupNameInput.value}`;
   groupNameTable.innerText = `Group ${groupNameInput.value}`;
 
-  team1Name.innerText = `${team1Input.value}`;
-  team2Name.innerText = `${team2Input.value}`;
-  team3Name.innerText = `${team3Input.value}`;
-  team4Name.innerText = `${team4Input.value}`;
+  teamsList.innerHTML = `
+  <p>${team1Input.value}</p>
+  <p>${team2Input.value}</p>
+  <p>${team3Input.value}</p>
+  <p>${team4Input.value}</p>
+  `;
 
   team1InTable.innerText = `${team1Input.value}`;
   team2InTable.innerText = `${team2Input.value}`;
@@ -97,7 +95,7 @@ function confirmTeams() {
     </div>
     `;
 
-  groupTeamsList.append(team1Name, team2Name, team3Name, team4Name);
+  groupTeamsList.append(teamsList);
   round1.append(round1Div);
   round2.append(round2Div);
   round3.append(round3Div);
