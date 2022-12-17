@@ -1,7 +1,7 @@
 const submitButton = document.getElementById("submit-btn");
 const resultSubmitButton = document.getElementById("scores-submit-btn");
 
-const groupNameInput = document.getElementById("group-name-input"); 
+const groupNameInput = document.getElementById("group-name-input");
 const team1Input = document.getElementById("team-1-input");
 const team2Input = document.getElementById("team-2-input");
 const team3Input = document.getElementById("team-3-input");
@@ -25,8 +25,8 @@ resultSubmitButton.addEventListener("click", updateScores);
 
 function confirmTeams() {
   const groupTeamsList = document.getElementById("group-teams");
-  const teamsList = document.getElementById("teams-list")
-  
+  const teamsList = document.getElementById("teams-list");
+
   groupNameTeamList.innerText = `Group ${groupNameInput.value}`;
   groupNameTable.innerText = `Group ${groupNameInput.value}`;
 
@@ -122,10 +122,18 @@ function updateScores() {
   const team3TablePoints = document.getElementById("third-team-points");
   const team4TablePoints = document.getElementById("fourth-team-points");
 
-  const team1TableGoalsScored = document.getElementById("first-team-goals-scored");
-  const team2TableGoalsScored = document.getElementById("second-team-goals-scored");
-  const team3TableGoalsScored = document.getElementById("third-team-goals-scored");
-  const team4TableGoalsScored = document.getElementById("fourth-team-goals-scored");
+  const team1TableGoalsScored = document.getElementById(
+    "first-team-goals-scored"
+  );
+  const team2TableGoalsScored = document.getElementById(
+    "second-team-goals-scored"
+  );
+  const team3TableGoalsScored = document.getElementById(
+    "third-team-goals-scored"
+  );
+  const team4TableGoalsScored = document.getElementById(
+    "fourth-team-goals-scored"
+  );
 
   const team1TableGoalsLost = document.getElementById("first-team-goals-lost");
   const team2TableGoalsLost = document.getElementById("second-team-goals-lost");
@@ -188,18 +196,52 @@ function updateScores() {
     team3Points += 1;
   }
 
-  team1TablePoints.innerText = team1Points;
-  team2TablePoints.innerText = team2Points;
-  team3TablePoints.innerText = team3Points;
-  team4TablePoints.innerText = team4Points;
+  // team1TableGoalsScored.innerText =
+  //   +team1ScoreR1.value + +team1ScoreR2.value + +team1ScoreR3.value;
+  // team2TableGoalsScored.innerText =
+  //   +team2ScoreR1.value + +team2ScoreR2.value + +team2ScoreR3.value;
+  // team3TableGoalsScored.innerText =
+  //   +team3ScoreR1.value + +team3ScoreR2.value + +team3ScoreR3.value;
+  // team4TableGoalsScored.innerText =
+  //   +team4ScoreR1.value + +team4ScoreR2.value + +team4ScoreR3.value;
 
-  team1TableGoalsScored.innerText = +team1ScoreR1.value + +team1ScoreR2.value + +team1ScoreR3.value;
-  team2TableGoalsScored.innerText = +team2ScoreR1.value + +team2ScoreR2.value + +team2ScoreR3.value;
-  team3TableGoalsScored.innerText = +team3ScoreR1.value + +team3ScoreR2.value + +team3ScoreR3.value;
-  team4TableGoalsScored.innerText = +team4ScoreR1.value + +team4ScoreR2.value + +team4ScoreR3.value;
+  // team1TableGoalsLost.innerText =
+  //   +team2ScoreR1.value + +team3ScoreR2.value + +team4ScoreR3.value;
+  // team2TableGoalsLost.innerText =
+  //   +team1ScoreR1.value + +team4ScoreR2.value + +team3ScoreR3.value;
+  // team3TableGoalsLost.innerText =
+  //   +team4ScoreR1.value + +team1ScoreR2.value + +team2ScoreR3.value;
+  // team4TableGoalsLost.innerText =
+  //   +team3ScoreR1.value + +team2ScoreR2.value + +team1ScoreR3.value;
 
-  team1TableGoalsLost.innerText = +team2ScoreR1.value + +team3ScoreR2.value + +team4ScoreR3.value;
-  team2TableGoalsLost.innerText = +team1ScoreR1.value + +team4ScoreR2.value + +team3ScoreR3.value;
-  team3TableGoalsLost.innerText = +team4ScoreR1.value + +team1ScoreR2.value + +team2ScoreR3.value;
-  team4TableGoalsLost.innerText = +team3ScoreR1.value + +team2ScoreR2.value + +team1ScoreR3.value;
+  let teamsPointsObject = {};
+
+  teamsPointsObject[team1Input.value] = team1Points;
+  teamsPointsObject[team2Input.value] = team2Points;
+  teamsPointsObject[team3Input.value] = team3Points;
+  teamsPointsObject[team4Input.value] = team4Points;
+
+  const teamsSortedByScores = Object.entries(teamsPointsObject)
+    .sort(([, a], [, b]) => a - b)
+    .reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
+
+  const result = Object.keys(teamsSortedByScores).map((key) => [
+    String(key),
+    teamsSortedByScores[key],
+  ]);
+
+  team1InTable.innerText = `${result[3][0]}`;
+  team2InTable.innerText = `${result[2][0]}`;
+  team3InTable.innerText = `${result[1][0]}`;
+  team4InTable.innerText = `${result[0][0]}`;
+
+  team1TablePoints.innerText = `${result[3][1]}`;
+  team2TablePoints.innerText = `${result[2][1]}`;
+  team3TablePoints.innerText = `${result[1][1]}`;
+  team4TablePoints.innerText = `${result[0][1]}`;
+
+
+  console.log(teamsPointsObject);
+  console.log(teamsSortedByScores);
+  console.log(result);
 }
